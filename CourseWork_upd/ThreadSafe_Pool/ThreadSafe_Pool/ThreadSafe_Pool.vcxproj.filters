@@ -23,10 +23,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="thread_pool.h">
+    <ClInclude Include="safe_queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="safe_queue.h">
+    <ClInclude Include="thread_pool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
