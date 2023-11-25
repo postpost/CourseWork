@@ -19,7 +19,7 @@ int main() {
 	thread_pool th1;
 	for (int i = 0; i < cores; ++i) {
 		th1.submit(func1);
-		std::this_thread::sleep_for(1000ms);
+		//std::this_thread::sleep_for(1000ms);
 		th1.submit(func2);
 	}
 	return 0;
