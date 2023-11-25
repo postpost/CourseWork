@@ -18,10 +18,9 @@ thread_pool::thread_pool() : done(false) {
 //destructor
 thread_pool::~thread_pool() {
 	for (auto& el : threads) {
-		//if (el.joinable())
+		done = true;
 		el.join();
 	}
-	done = true;
 }
 
 void thread_pool::work() {
@@ -33,9 +32,9 @@ void thread_pool::work() {
 		else {
 			std::this_thread::yield(); //если задач нет, берем перерыв
 		}
-		if (work_queue.get_size() == 0) {
+		/*if (work_queue.get_size() == 0) {
 			done = true;
 			return;
-		}
+		}*/
 	}
 }
