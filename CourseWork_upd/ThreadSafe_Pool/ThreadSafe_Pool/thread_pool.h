@@ -21,8 +21,7 @@ private:
 	std::vector <std::thread> threads; //вектор рабочих потоков
 public:
 	//constructor
-	thread_pool() {};
-	thread_pool(int cores);
+	thread_pool();
 	/*template <typename T>
 	thread_pool(T func) {
 		int cores = std::thread::hardware_concurrency() - 1;

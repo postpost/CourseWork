@@ -5,13 +5,10 @@
 #include <functional>
 #include "thread_pool.h"
 
-thread_pool::thread_pool(int cores) : done(false) {
-	//int cores = std::thread::hardware_concurrency() - 1;
+thread_pool::thread_pool() : done(false) {
 	try {
-		for (int i = 0; i < cores; ++i) {
-			threads.push_back(std::thread(&thread_pool::work, std::move(this)));
+		threads.push_back(std::thread(&thread_pool::work, std::move(this)));
 		}
-	}
 	catch (...) {
 		done = true;
 		throw "Incorrect work...\n";
@@ -40,6 +37,5 @@ void thread_pool::work() {
 			done = true;
 			return;
 		}
-			
 	}
 }
